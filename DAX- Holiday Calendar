@@ -1,0 +1,17 @@
+Calculate difference in days for working days.
+
+Step 1:
+Import/ create a Holidat Table
+
+Step 2:
+Create the following column in Date table to check whether the day is a Saturday or Sunday
+IsWorkingDay = IF (NOT('Date'[DayofWeek]= "Saturday" || ('Date'[DayOfWeek]= "Sunday")) && COUNTX(RELATEDTABLE('Holiday List'),1)<1,1,0)
+
+Step 3:
+Create a connection between holiday table and date table by joining
+
+Step 4:
+Now calculate the difference between two dates by using the following Dax
+Working Days = CALCULATE(SUM('Date'[IsWorkingDay]),
+           DATESBETWEEN('Date'[Date],'Table'[Date1], 
+                        'Table'[Date2]))
