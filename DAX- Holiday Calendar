@@ -1,7 +1,7 @@
 Calculate difference in days for working days.
 
 Step 1:
-Import/ create a Holidat Table
+Import/ create a Holiday Table
 
 Step 2:
 Create the following column in Date table to check whether the day is a Saturday or Sunday
